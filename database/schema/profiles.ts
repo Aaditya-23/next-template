@@ -33,7 +33,8 @@ export const profiles = mysqlTable(
 
 export const profileRelations = relations(profiles, ({ many }) => ({
   likes: many(likes),
-  followers: many(followers),
+  followers: many(followers, { relationName: 'followers' }),
+  following: many(followers, { relationName: 'following' }),
 }))
 
 export type Profile = typeof profiles.$inferSelect

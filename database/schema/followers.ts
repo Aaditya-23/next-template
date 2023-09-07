@@ -20,9 +20,11 @@ export const followersRelations = relations(followers, ({ one }) => ({
   follower: one(profiles, {
     fields: [followers.followerId],
     references: [profiles.userId],
+    relationName: 'followers',
   }),
   following: one(profiles, {
     fields: [followers.followingId],
     references: [profiles.userId],
+    relationName: 'following',
   }),
 }))
