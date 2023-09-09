@@ -13,8 +13,6 @@ export const profiles = mysqlTable(
   'profiles',
   {
     userId: varchar('user_id', { length: 100 }).notNull().unique(),
-    firstName: text('first_name'),
-    lastName: text('last_name'),
     bio: text('bio'),
     dob: text('dob'),
     avatarKey: text('avatar_key'),

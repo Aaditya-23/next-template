@@ -3,6 +3,7 @@ import { ThemeProvider } from '@/lib/theme-provider'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ClerkProvider } from '@clerk/nextjs'
+import { Toaster } from '@/components/ui/toaster'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,6 +23,7 @@ export default function RootLayout({
         <body className={inter.className}>
           <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
             {children}
+            <Toaster />
           </ThemeProvider>
         </body>
       </html>
